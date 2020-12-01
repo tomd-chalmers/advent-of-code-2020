@@ -2,7 +2,7 @@
 
 ## Puzzles
 
-### [Day 1: Report Repair](https://github.com/mmalmsten/advent-of-code-2020/blob/master/src/puzzle01.erl)
+[Day 1: Report Repair](https://github.com/mmalmsten/advent-of-code-2020/blob/master/src/puzzle01.erl)
 
 ## Getting started
 
