@@ -1,5 +1,8 @@
 # 🎄 Advent of Code 2020 🎄
-=====
+
+## Puzzles
+
+### [Day 1: Report Repair](https://github.com/mmalmsten/advent-of-code-2020/blob/master/src/puzzle01.erl)
 
 ## Getting started
 
