@@ -1,11 +1,5 @@
 -module(helpers).
 
--ifdef(TEST).
-
--include_lib("eunit/include/eunit.hrl").
-
--endif.
-
 -export([read_at_pos/2,
          read_file/1,
          read_file/3,
@@ -27,7 +21,7 @@ read_file(File, Delimiter, Types) ->
     {ok, Binary} = file:read_file([Priv_dir, "/", File]),
     List = binary:split(Binary, Delimiter, [global]),
     case Types of
-        number ->
+        numbers ->
             lists:map(fun (L) -> binary_to_number(L) end, List);
         _ -> List
     end.
@@ -46,6 +40,8 @@ replace_at_pos(List, Pos, New_value) ->
 
 -ifdef(TEST).
 
+-include_lib("eunit/include/eunit.hrl").
+
 binary_to_number_test() ->
     1 = binary_to_number(<<"1">>),
     1.1 = binary_to_number(<<"1.1">>).
@@ -54,7 +50,7 @@ read_file_test() ->
     <<"1,2,3,4,5,6,7,8,9">> = read_file("0.txt"),
     [1, 2, 3, 4, 5, 6, 7, 8, 9] = read_file("0.txt",
                                             <<",">>,
-                                            number),
+                                            numbers),
     [<<"1">>,
      <<"2">>,
      <<"3">>,
